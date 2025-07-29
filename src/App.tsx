@@ -9,7 +9,7 @@ function App() {
 
   const zoomSdk = (window as any).zoomSdk;
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     if (zoomSdk) {
       zoomSdk.config({
@@ -29,7 +29,7 @@ function App() {
           console.error('❌ Zoom SDK error:', err);
         });
     }
-  }, []);
+  }, [zoomSdk]);
 
   const sendMessage = () => {
     if (input.trim() !== '') {
